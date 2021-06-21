@@ -1,0 +1,120 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Playball&display=swap');
+
+.quotos {
+  height: 82px;
+  background: #0037a6;
+  width: 100%;
+}
+
+.logo-img {
+  width: 146px;
+  float: left;
+}
+.row.section-logo {
+  background: #f5f5f5;
+}
+
+h3.logo-name {
+  font-size: 23px;
+    line-height: 5.5;
+    font-weight: 800;
+    color: #0037a6;
+    font-family: 'Anton' sans-serif;
+}
+
+input.search-input {
+  width: 294px;
+  line-height: 2;
+}
+
+.form {
+  margin-top: 50px;
+  width: 326px;
+  border: 2px solid black;
+}
+
+p.log-in {
+  float: right;
+  margin-right: 99px;
+  line-height: 8;
+  font-weight: 700;
+}
+svg.icon-person {
+  margin-top: 56px;
+}
+.authorization {
+  background: #fff;
+  box-shadow: 0 4px 10px -1px rgb(0 0 0 / 20%);
+  margin-top: 36px;
+}
+
+nav.nav-menu {
+  background: #fff;
+  box-shadow: 0 4px 10px -1px rgb(0 0 0 / 30%);
+}
+
+.slide-img {
+  width: 900px !important;
+  height: 310px;
+  background-image: url(./images/book1.jpg);
+  background-size: cover;
+  background-position: 50% 60%;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+img.images {
+  width: 900px;
+  margin: 0 auto;
+}
+
+/* categories */
+
+.category.card {
+  display: block;
+  width: 300px;
+  height: 130px;
+  position: relative;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background: #0037a6;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border: none;
+}
+
+.quantity.card-footer {
+  background: #f5f5f5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  font-size: 12px;
+  padding: 18px 20px;
+  text-transform: uppercase;
+  color: #3b3951;
+  font-family: arimobold;
+  box-shadow: 0 4px 10px -1px rgb(0 0 0 / 20%);
+}
+
+/* Footer */
+
+footer.footer {
+  background: #44425c;
+  padding-top: 49px;
+  padding-bottom: 33px;
+}
+
+.footer-info ul li {
+  list-style: none;
+  color: #a3a0c4;
+}
+
+.developers {
+  font-size: 14px;
+  margin-left: 32px;
+}

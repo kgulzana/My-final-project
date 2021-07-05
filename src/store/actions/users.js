@@ -1,13 +1,11 @@
 import {
   SET_USERS,
-  SET_USER,
-  FETCH_START,
-  FETCH_END,
-  FETCH_FAILURE,
-  FETCH_SUCCESS,
-  ADD_BOOK
+  FETCH_START_USERS,
+  FETCH_END_USERS,
+  FETCH_FAILURE_USERS,
+  FETCH_SUCCESS_USERS,
 } from "./types";
-import { USERS_URL } from "../constants/booksUrl";
+import { USERS_URL } from "../constants/projectsUrls";
 
 export function setUsers(payload) {
   return {
@@ -16,64 +14,38 @@ export function setUsers(payload) {
   };
 }
 
-export function setUser(payload) {
-  return {
-    type: SET_USER,
-    payload,
-  };
-}
 
 export function fetchUsersFailure(payload) {
   return {
-    type: FETCH_FAILURE,
+    type: FETCH_FAILURE_USERS,
     payload,
   };
 }
 
-export function fetchUserFailure(payload) {
-  return {
-    type: FETCH_FAILURE,
-    payload,
-  };
-}
+
 
 export function fetchUsersSuccess(payload) {
   return {
-    type: FETCH_SUCCESS,
+    type: FETCH_SUCCESS_USERS,
     payload,
   };
 }
 
-export function fetchUserSuccess(payload) {
-  return {
-    type: FETCH_SUCCESS,
-    payload,
-  };
-}
 
 export function startFetchUsers() {
   return {
-    type: FETCH_START,
+    type: FETCH_START_USERS,
   };
 }
 
-export function startFetchUser() {
-  return {
-    type: FETCH_START,
-  };
-}
 
 export function endFetchUsers() {
+  console.log('wwww')
   return {
-    type: FETCH_END,
+    type: FETCH_END_USERS,
   };
 }
 
-export function endFetchUser() {
-  return {
-    type: FETCH_END,
-  };
-}
 
 export const fetchUsers = () => (dispatch) => {
   dispatch(startFetchUsers());
@@ -82,6 +54,7 @@ export const fetchUsers = () => (dispatch) => {
   fetch(USERS_URL)
     .then((r) => r.json())
     .then((data) => {
+      console.log("DATA", data);
       if (typeof data === "string") {
         dispatch(fetchUsersFailure(data));
       } else {
@@ -96,30 +69,5 @@ export const fetchUsers = () => (dispatch) => {
     });
 };
 
-export const fetchUser = (id) => (dispatch) => {
-  dispatch(startFetchUser());
-  dispatch(setUser([]));
 
-  fetch(USERS_URL + id)
-    .then((r) => r.json())
-    .then((data) => {
-      if (typeof data === "string") {
-        dispatch(fetchUserFailure(data));
-      } else {
-        dispatch(setUser(data));
-        dispatch(fetchUserSuccess(data));
-      }
 
-      dispatch(endFetchUser());
-    })
-    .catch((e) => {
-      console.error("Error", e);
-    });
-};
-
-export function addNewBookAction(data) {
-  return {
-    type: ADD_BOOK,
-    payload: data,
-  };
-}

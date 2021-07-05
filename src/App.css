@@ -1,26 +1,42 @@
+* {
+  box-sizing: border-box;
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Playball&display=swap');
+body {
+  margin: 0;
+}
 
-.quotos {
+/* Quotes */
+.quotes {
   height: 82px;
-  background: #0037a6;
+  background: #0000ff;
   width: 100%;
+  text-align: center;
+  line-height: 4.5;
+  font-size: 16px;
+  color: white;
+  font-family: "Shrikhand", cursive;
+  margin-bottom: 0;
 }
 
 .logo-img {
   width: 146px;
   float: left;
 }
-.row.section-logo {
-  background: #f5f5f5;
+
+.logo {
+  height: 50px;
+}
+.wrapper {
+  background-color: #f5f5f5;
 }
 
 h3.logo-name {
-  font-size: 23px;
-    line-height: 5.5;
-    font-weight: 800;
-    color: #0037a6;
-    font-family: 'Anton' sans-serif;
+  font-size: 20px;
+  line-height: 5.5;
+  font-weight: 800;
+  color: #0000ff;
+  font-family: "Luckiest Guy", cursive;
 }
 
 input.search-input {
@@ -28,8 +44,12 @@ input.search-input {
   line-height: 2;
 }
 
+form.search-form {
+  position: relative;
+}
+
 .form {
-  margin-top: 50px;
+  margin-top: 39px;
   width: 326px;
   border: 2px solid black;
 }
@@ -40,65 +60,208 @@ p.log-in {
   line-height: 8;
   font-weight: 700;
 }
-svg.icon-person {
-  margin-top: 56px;
-}
+
 .authorization {
   background: #fff;
   box-shadow: 0 4px 10px -1px rgb(0 0 0 / 20%);
-  margin-top: 36px;
+  margin-top: 17px;
+  height: 83px;
+  display: flex;
+  justify-content: space-between;
 }
 
-nav.nav-menu {
+.auth-signin {
+ 
+  margin-top: 30px;
+  margin-left: 29px;
+  transition-property: color, background-color;
+  transition-duration: 0.5s, 0.5s;
+}
+.auth-signin a {
+  text-decoration: none;
+  color: #fff;
+  padding: 4px 8px;
+  background: blue;
+  border-radius: 3px;
+}
+.auth-signin:hover a {
+  color: white;
+  background-color: red;
+  transition-property: color, background-color;
+  transition-duration: 0.5s, 0.5s;
+}
+
+.auth-register {
+ 
+  margin-top: 30px;
+  margin-right: 41px;
+  
+  transition-property: color, background-color;
+  transition-duration: 0.5s, 0.5s;
+}
+.auth-register a {
+  text-decoration: none;
+  color: #fff;
+  padding: 4px 8px;
+   background: blue;
+   border-radius: 3px;
+}
+
+.auth-register:hover a {
+  color: white;
+  background-color: red;
+  transition-property: color, background-color;
+  transition-duration: 0.5s, 0.5s;
+}
+
+svg.notice {
+  margin-top: 23px;
+  font-size: 30px;
+  margin-right: 59px;
+  color: #0000ff;
+  transition-property: color, background-color;
+  transition-duration: 0.5s, 0.5s;
+}
+
+svg.notice:hover {
+  color: red;
+  transition-property: color, background-color;
+  transition-duration: 0.5s, 0.5s;
+}
+.col-4.login {
+  width: 289px;
+}
+
+.filter-section {
   background: #fff;
   box-shadow: 0 4px 10px -1px rgb(0 0 0 / 30%);
+  height: 50px;
 }
 
-.slide-img {
-  width: 900px !important;
-  height: 310px;
-  background-image: url(./images/book1.jpg);
-  background-size: cover;
-  background-position: 50% 60%;
-  margin-bottom: 30px;
-  margin-top: 30px;
-}
-
-img.images {
-  width: 900px;
-  margin: 0 auto;
-}
-
-/* categories */
-
-.category.card {
-  display: block;
-  width: 300px;
-  height: 130px;
-  position: relative;
-  float: left;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  background: #0037a6;
-  color: #fff;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  border: none;
-}
-
-.quantity.card-footer {
-  background: #f5f5f5;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+/* Slider */
+.carousel__img1 {
   width: 100%;
-  font-size: 12px;
-  padding: 18px 20px;
-  text-transform: uppercase;
+  height: 100vh;
+  background: url(../src/images/slide7.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+img.slide-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+.carousel.slide {
+  margin-top: 51px;
+}
+
+/* books */
+.book-img img {
+  max-width: 248px;
+  max-height: 293px;
+}
+
+img.card-img-top.book-img {
+  height: 295px;
+}
+
+.inner img {
+  transition: all 1.5s ease;
+}
+
+.inner:hover img {
+  transform: scale(1.5);
+}
+.card.shadow.book {
+  height: 380px;
+  position: relative;
+  background: #f5f5f5;
+}
+.container.cards {
+  margin-right: 69px;
+}
+
+p.card-title.book-title {
+  margin-bottom: 6px;
   color: #3b3951;
-  font-family: arimobold;
-  box-shadow: 0 4px 10px -1px rgb(0 0 0 / 20%);
+  font-family: rubikmedium;
+  line-height: 1.2;
+  max-height: 57px;
+  margin-top: -8px;
+  float: left;
+}
+
+p.book-author {
+  color: #3b3951;
+  font-family: georgia;
+  line-height: 0.5;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  float: left;
+}
+
+button.btn.btn-primary.delete-btn {
+  width: 85px;
+  position: absolute;
+  margin-top: 18px;
+  margin-left: -57px;
+  height: 37px;
+  transition-property: color, background-color;
+  transition-duration: 0.5s, 0.5s;
+}
+
+button.btn.btn-primary.delete-btn:hover {
+  background-color: red;
+  transition-property: color, background-color;
+  transition-duration: 0.5s, 0.5s;
+}
+
+button.btn.btn-primary.add-btn {
+  margin-top: 20px;
+  transition-property: color, background-color;
+  transition-duration: 0.5s, 0.5s;
+}
+
+button.btn.btn-primary.add-btn:hover {
+  background-color: red;
+  transition-property: color, background-color;
+  transition-duration: 0.5s, 0.5s;
+}
+.card-body.text-center.book-desc {
+  height: 8px;
+}
+
+.card.shadow.col-md-3.book {
+  width: 228px;
+  height: 370px;
+  margin-right: 51px;
+  margin-top: 51px;
+}
+
+.lbl-exchange {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: red;
+  color: white;
+  padding: 3px 5px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 14px;
+  z-index: 9;
+}
+.lbl-sale {
+  position: absolute;
+  top: -3px;
+  right: 20px;
+  width: 30px;
+  height: 114px;
+  z-index: 9;
+  background-color: blue;
+  color: white;
+  writing-mode: vertical-lr;
+  text-align: center;
 }
 
 /* Footer */
@@ -107,14 +270,107 @@ footer.footer {
   background: #44425c;
   padding-top: 49px;
   padding-bottom: 33px;
-}
-
-.footer-info ul li {
-  list-style: none;
-  color: #a3a0c4;
+  margin-top: 51px;
 }
 
 .developers {
   font-size: 14px;
   margin-left: 32px;
+}
+.footer-title {
+  text-align: center;
+}
+
+/* bookPage */
+button.btn-not-agree.btn.btn-secondary {
+  margin-left: 17px;
+}
+
+button.btn.btn-primary.exchange-btn {
+  margin-top: 65px;
+}
+
+.exchange-btn {
+  margin-top: 548px;
+  width: 127px;
+}
+.book-desc {
+  text-align: center;
+}
+
+/* userPage */
+.user-details {
+  text-align: center;
+  margin-top: 30px;
+}
+.col-md-4.btns {
+  margin-top: 17px;
+}
+
+.row.book-page {
+  margin-top: 38px;
+}
+
+/* users */
+
+.form-group.list {
+  padding: 3px;
+}
+
+.col-8.users-firstname a {
+  text-decoration: none;
+}
+.users-page {
+  background: #d4dae0a8;
+}
+
+.container.users a {
+  text-decoration: none;
+  color: black;
+}
+/* notifications */
+
+.card.text-center.book-notifications {
+  margin-top: 35px;
+}
+
+.card-body.n-details {
+  position: relative;
+}
+
+button.btn.btn-primary.delete-noticeBtn {
+  width: 85px;
+  position: absolute;
+  margin-top: -32px;
+  margin-left: 176px;
+  height: 37px;
+  transition-property: color, background-color;
+  transition-duration: 0.5s, 0.5s;
+}
+
+button.btn.btn-primary.delete-noticeBtn:hover {
+  background-color: red;
+  transition-property: color, background-color;
+  transition-duration: 0.5s, 0.5s;
+}
+
+/* personal profile */
+
+.profile-btn {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  box-shadow: 0 4px 10px -1px rgb(0 0 0 / 20%);
+  margin-top: 17px;
+  height: 83px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 110px;
+}
+h5.profile-notice {
+  line-height: 5;
+  margin-right: 18px;
+  margin-left: 15px;
+  font-size: 15px;
+  font-weight: bold;
 }

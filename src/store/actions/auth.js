@@ -7,20 +7,23 @@ export const logoutAction = () => (dispatch) => {
   localStorage.removeItem("key");
 };
 
-export const getMeAction = (token) => (dispatch) => {
-  let request = {
-    headers: {
-      "KEY": token,
-    },
-  };
-
-  fetch("http://zahiddin.pythonanywhere.com/me", request)
+export const login = (request) => (dispatch) => {
+  fetch("http://zahazaha.pythonanywhere.com/user/login", request)
     .then((r) => r.json())
     .then((data) => {
       if (typeof data === "string") {
         dispatch({ type: LOGIN_FAILURE });
       } else {
-        dispatch({ type: LOGIN_SUCCESS });
+        dispatch({ type: LOGIN_SUCCESS, payload: data.id - 1 });
+        console.log("LOGIN DATA", data);
+        if (data.key) {
+          localStorage.setItem("key", data.key);
+          localStorage.setItem("user_id", data.id - 1);
+          alert("You have loginned successfully!");
+          //window.location.href = "/";
+        } else {
+          alert("login error!");
+        }
       }
     });
 };

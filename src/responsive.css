@@ -1,0 +1,18 @@
+
+
+
+@media only screen and (max-width: 1199) {
+  .authorization {
+    margin-right: 52px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    background-color: red;
+  }
+}
+
+@media only screen and (max-width: 767) {
+  img.card-img-top.book-img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}

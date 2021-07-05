@@ -1,31 +1,33 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { fetchQuotes } from "../store/actions/quotes";
 
 export default function Quotes() {
-  const quotes = [
-    "Вселенная",
-    "Лунных хроник",
-    "продолжает",
-    "Вселенная",
-    "Лунных хроник",
-    "продолжает",
-    "Вселенная",
-    "Лунных хроник",
-    "продолжает",
-    "Вселенная",
-    "Лунных хроник",
-    "продолжает",
-  ];
+  let { loading, quotes } = useSelector((state) => state.quotes);
+  const [activeQuote, setActiveQuote] = useState(null);
+  let dispatch = useDispatch();
 
-  const [activeQuote, setActiveQuote] = useState(quotes[0]);
+  useEffect(() => {
+    dispatch(fetchQuotes());
+  }, []);
 
   useEffect(() => {
     let quoteIndex = Math.floor(Math.random() * quotes.length);
     setActiveQuote(quotes[quoteIndex]);
-  }, []);
+  }, [quotes]);
 
   return (
-    <div className="col-12">
-      <div className="quotos">{activeQuote}</div>
-    </div>
+    <>
+      {!activeQuote ? (
+        <>loading</>
+      ) : (
+        <div className="col-xs-12 col-sm-12 col-md-12 col-12 quotes-m">
+          <p className="quotes">
+            {activeQuote.author}: "{activeQuote.text}"
+          </p>
+        </div>
+      )}
+    </>
   );
 }

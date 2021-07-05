@@ -1,4 +1,3 @@
-import NavMenu from "../components/NavMenu";
 import Quotes from "../components/Quotes";
 import HeaderActions from "../components/HeaderActions";
 import { useEffect } from "react";
@@ -7,36 +6,40 @@ import { fetchBooks } from "../store/actions/books";
 import Books from "../components/Books";
 import Slider from "../components/Slider";
 import Auth from "../components/Auth";
-import Users from "../components/Users";
-import { Link, useParams } from "react-router-dom";
+import FilterMenu from "../components/FilterMenu";
 import { fetchUsers } from "../store/actions/users";
-import BookPage from "../components/BookPage";
+
 import { useSelector } from "react-redux";
+import { LOGIN_SUCCESS } from "../store/actions/types";
 
 export default function Main() {
   let { logined } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-  let { id } = useParams();
+
+  useEffect(() => {
+    if (localStorage.getItem("key")) {
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: localStorage.getItem("user_id"),
+      });
+    }
+  }, []);
 
   useEffect(() => {
     dispatch(fetchBooks());
   }, []);
 
   useEffect(() => {
-    dispatch(fetchUsers(id));
-  }, [id]);
+    dispatch(fetchUsers());
+  }, []);
 
   return (
     <>
       <Quotes />
       <HeaderActions />
-      <NavMenu />
+      <FilterMenu />
       <Slider />
       <Books />
-      <Auth />
-      <Users />
-      <BookPage />
-      <Auth logined={logined} />
     </>
   );
 }
